@@ -1,0 +1,19 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			TOOL FOR IDENTIFYING HTML USING PARSE,REQUEST,HTML
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#!/usr/bin/python
+
+import sys
+import re
+import requests 
+import argparse
+parser=argparser.ArgumentParser(description="RegEx help menu")
+parser.add_arguent("-url", type=str , help="target URL with schema", required =True)
+b= parser.parse_args()
+if "https://" in b.url or "http://" in b.url:
+        html = requets .get(b.url, timeout=10).text
+        title = re.findall(r"\<title>\>(.*?)\<\/title\>", html.decode('utf-8'))
+        print (title[0])
+else:
+        print ("Wrong input .look for -h/---help")
