@@ -1,0 +1,15 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+							BANNER GRABBING
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++						
+-Connect to th server "19"
+
+
+#!/usr/bin/python3
+import socket 
+sock= scoket.socket(socket.AF_INET,socket.SOCK-STREAM)
+t_host= input("enter the host:")
+t_port = int(("enter the port : "))
+sock.connect((t_host,t_port))
+e = sock.recv(1024)
+print("output:", e)
+sock.close()

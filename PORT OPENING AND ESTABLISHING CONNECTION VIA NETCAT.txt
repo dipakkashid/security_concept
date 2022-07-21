@@ -1,0 +1,26 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			PORT OPENING AND ESTABLISHING CONNECTION VIA NETCAT
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#!/usr/bin/python3
+import socket
+host='127.0.0.1'
+s = socket.socket(socket.AF_INET , socket.SOCK_STREAM)
+addr=(host,8080)
+s.connect(addr)
+
+try:
+	msg=b"ulalala"
+	s.sendall(msg)
+except socket.error as ee:
+	print("Error:", ee)
+finally:
+	s.close()
+	
+--------------------------ON ANOTHER TERMINAL--------------------------------
+nc -lvp 8080   //netcat on listening port 8080
+
+o/p-
+listening on [any] 8080 ...
+connect to [127.0.0.1] from localhost [127.0.0.1] 48918
+ulalala  

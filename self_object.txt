@@ -1,0 +1,12 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+							SELF OBJECT
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#!/usr/bin/python3
+
+
+
+class check:
+	def__init__(self):
+		print("address of self  = ", id(self))
+obj = check()
+print("address of class object = ", id(obj))
